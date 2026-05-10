@@ -34,7 +34,8 @@ app.use(express.json());
 app.use(
   cors({
     origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
@@ -47,7 +48,7 @@ app.use(
 app.get("/", (req, res) => {
   res.status(200).json({
     success: true,
-    message: "Backend Running Successfully 🚀",
+    message: "🚀 Backend Running Successfully",
   });
 });
 
@@ -59,7 +60,7 @@ app.get("/", (req, res) => {
 app.get("/health", (req, res) => {
   res.status(200).json({
     success: true,
-    message: "Server is healthy 🚀",
+    message: "✅ Server is healthy",
   });
 });
 
@@ -80,13 +81,13 @@ app.use("/api/notes", notesRoutes);
 
 
 // ======================
-// 404 HANDLER
+// 404 ROUTE
 // ======================
 
-app.use((req, res) => {
+app.use("*", (req, res) => {
   res.status(404).json({
     success: false,
-    message: "Route Not Found",
+    message: "❌ Route Not Found",
   });
 });
 
@@ -111,6 +112,15 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 8080;
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
+});
+
+
+// ======================
+// HANDLE SERVER ERRORS
+// ======================
+
+server.on("error", (err) => {
+  console.error("❌ Failed to start server:", err);
 });
