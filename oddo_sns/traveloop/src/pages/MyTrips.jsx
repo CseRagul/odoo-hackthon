@@ -40,7 +40,7 @@ const MyTrips = () => {
 
           const response =
             await fetch(
-              "http://localhost:5000/api/trips",
+              "https://spingame-production.up.railway.app/api/trips",
               {
                 headers: {
                   Authorization:

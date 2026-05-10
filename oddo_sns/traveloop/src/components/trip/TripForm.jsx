@@ -150,7 +150,7 @@ const TripForm = () => {
       // API CALL
       const response =
         await fetch(
-          "http://localhost:5000/api/trips/create",
+          "https://spingame-production.up.railway.app/api/trips/create",
           {
             method: "POST",
 

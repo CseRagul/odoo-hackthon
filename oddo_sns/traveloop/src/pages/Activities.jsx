@@ -83,7 +83,7 @@ const navigate =
 
           const response =
             await fetch(
-              `http://localhost:5000/api/trips/${id}`,
+              `https://spingame-production.up.railway.app/api/trips/${id}`,
               {
                 headers: {
                   Authorization:
