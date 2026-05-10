@@ -1,6 +1,3 @@
-import crypto from "crypto";
-global.crypto = crypto;
-
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
@@ -36,7 +33,6 @@ app.use(
     origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
   })
 );
 
@@ -84,7 +80,7 @@ app.use("/api/notes", notesRoutes);
 // 404 ROUTE
 // ======================
 
-app.use("*", (req, res) => {
+app.use((req, res) => {
   res.status(404).json({
     success: false,
     message: "❌ Route Not Found",
