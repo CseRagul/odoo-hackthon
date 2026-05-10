@@ -4,14 +4,22 @@
   "description": "Trip Planner Backend",
   "main": "server.js",
   "type": "module",
+
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js",
-    "build": "echo Build completed"
+    "dev": "nodemon server.js"
   },
-  "keywords": [],
-  "author": "",
+
+  "keywords": [
+    "trip-planner",
+    "backend",
+    "express",
+    "mongodb"
+  ],
+
+  "author": "Sanjai",
   "license": "ISC",
+
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.5",
@@ -20,6 +28,11 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.15.1"
   },
+
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+
   "engines": {
     "node": ">=18"
   }
