@@ -1,0 +1,18 @@
+/* src/index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GLOBAL BODY STYLING */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* ROOT */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
